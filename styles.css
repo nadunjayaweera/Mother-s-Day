@@ -1,0 +1,153 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #FFF6DB
+}
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.animated-image {
+  position: absolute;
+  bottom: -100px; /* Start the image outside of the viewport */
+  right: 2px;
+  animation: slide-up 1.5s forwards;
+  width: 600px;
+}
+
+
+.animated-image-second {
+  position: absolute;
+  top: -100px; /* Start the image outside of the viewport */
+  left: 2px;
+  animation: slide-down 1.5s forwards;
+  transform: rotate(180deg);
+  width: 600px;
+}
+
+.text-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font:bold;
+   text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 36px; /* Adjust the font size */
+  font-family: 'Briem Hand', sans-serif; /* Add your desired font */
+  color: #76af76; /* Text color */
+  font-weight: bold;
+  animation: fade-in 2s ease-in-out forwards; /* Cool animation */
+ 
+}
+
+.text-animation.hide {
+  opacity: 0 !important; /* Ensure that opacity is set to 0 */
+  animation: none !important; /* Remove the animation */
+  transition: opacity 1s ease-in-out; /* Add a fade-out transition */
+  animation-fill-mode: forwards; /* Ensure that the final keyframe values persist */
+  animation-delay: 2s; /* Delay the animation */
+}
+
+.text-animation-second {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font:bold;
+   text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 36px; /* Adjust the font size */
+  font-family: 'Briem Hand', sans-serif; /* Add your desired font */
+  color: #76af76; /* Text color */
+  font-weight: bold;
+  opacity: 0; /* Initially hide the second message */
+}
+
+.text-animation-second.show {
+  opacity: 1; /* Set opacity to 1 to show the second message */
+  transition: opacity 1s ease-in-out; /* Add a fade-in transition */
+}
+
+
+.text-animation-second.hide {
+   opacity: 0 !important; /* Ensure that opacity is set to 0 */
+  animation: none !important; /* Remove the animation */
+  transition: opacity 1s ease-in-out; /* Add a fade-out transition */
+  animation-fill-mode: forwards; /* Ensure that the final keyframe values persist */
+  animation-delay: 2s; /* Delay the animation */
+}
+
+.animated-image,
+.animated-image-second {
+  transition: opacity 1s ease-in-out; /* Add transition for opacity */
+}
+
+.animated-image.hide,
+.animated-image-second.hide {
+  opacity: 0; /* Initially hide the images */
+}
+
+.animated-image-third {
+    height:50%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  opacity: 0; /* Initially hide the third image */
+  transition: opacity 1s ease-in-out; /* Add transition for opacity */
+}
+
+.text-animation-third {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  left: 50%;
+  font:bold;
+   text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 36px; /* Adjust the font size */
+  font-family: 'Briem Hand', sans-serif; /* Add your desired font */
+  color: #76af76; /* Text color */
+  font-weight: bold;
+  opacity: 0; /* Initially hide the second message */
+}
+
+.text-animation-third.show {
+  opacity: 1; /* Set opacity to 1 to show the second message */
+  transition: opacity 1s ease-in-out; /* Add a fade-in transition */
+}
+
+
+@keyframes slide-up {
+  0% {
+    bottom: -100px; /* Start position */
+  }
+  100% {
+    bottom: 2px; /* End position */
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    top: -100px; /* Start position */
+  }
+  100% {
+    top: 2px; /* End position */
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
